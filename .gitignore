@@ -50,6 +50,10 @@ Thumbs.db
 coverage/
 *.lcov
 
+# 内部ドキュメント（顧客以外への流用防止のためリポジトリには含めない）
+README.md
+**/project_plan.md
+
 # Misc
 .cache/
 .parcel-cache/
