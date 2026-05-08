@@ -31,15 +31,16 @@
 
 ```
 expense-workflow/
-└── app_v1.0/                # 現行バージョン（Phase 1 完了）
-    ├── src/
-    │   ├── components/      # base / feature コンポーネント
-    │   ├── pages/           # 画面単位のページコンポーネント
-    │   ├── router/          # ルーティング設定
-    │   ├── mocks/           # 開発用モックデータ
-    │   └── i18n/            # 多言語リソース
-    ├── package.json
-    └── project_plan.md      # プロジェクト全体計画
+├── app_v2.0/                # 現行バージョン（GitHub Pages で公開中）
+│   ├── src/
+│   │   ├── components/      # base / feature コンポーネント
+│   │   ├── pages/           # 画面単位のページコンポーネント（dashboard / settings 追加）
+│   │   ├── router/          # ルーティング設定
+│   │   ├── mocks/           # 開発用モックデータ
+│   │   └── i18n/            # 多言語リソース
+│   ├── package.json
+│   └── project_plan.md
+└── app_v1.0/                # 旧バージョン（参照用、デプロイ対象外）
 ```
 
 ## 実装状況
@@ -64,12 +65,18 @@ expense-workflow/
 - **Phase 3**：予算管理、監査ログ出力、マスター管理、設定
 - **Phase 4**：Supabase連携、認証連携、データ永続化、RLSポリシー
 
-詳細は [`app_v1.0/project_plan.md`](app_v1.0/project_plan.md) を参照してください。
+詳細は [`app_v2.0/project_plan.md`](app_v2.0/project_plan.md) を参照してください。
+
+## デプロイ
+
+`main` ブランチへの push をトリガーに、[.github/workflows/deploy-pages.yml](.github/workflows/deploy-pages.yml) が `app_v2.0/` をビルドし GitHub Pages に自動デプロイします。
+
+公開URL: https://ng-hoshi-naohiro.github.io/expense-workflow/
 
 ## セットアップ
 
 ```bash
-cd app_v1.0
+cd app_v2.0
 npm install
 npm run dev          # 開発サーバー起動
 npm run build        # 本番ビルド
