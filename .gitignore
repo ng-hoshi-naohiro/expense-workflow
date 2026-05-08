@@ -54,6 +54,15 @@ coverage/
 README.md
 **/project_plan.md
 
+# 内部管理ファイル（開発ルール・タスク管理・仕様書）
+CLAUDE.md
+TODO.md
+doc/
+AGENTS.md
+.roo/
+.claude/
+openspec/
+
 # Misc
 .cache/
 .parcel-cache/
