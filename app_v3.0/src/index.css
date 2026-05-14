@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: #0c1830;
+  --ink-soft: #2a3a5a;
+  --bg: #ffffff;
+  --paper: #f6f3ec;
+  --paper-warm: #ede8db;
+  --accent: #c8472b;
+  --accent-soft: #e8835c;
+  --line: #d5cdb8;
+  --primary: #24BD7E;
+  --primary-dark: #1a9560;
+  --success: #1a4480;
+  --warning: #b85c00;
+  --error: #c8472b;
+  --screen: #ffffff;
+  --screen-soft: #f4f5f8;
+}
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  color: var(--ink);
+  background-color: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Override font-mono to use body font with tabular nums (no slashed zero) */
+.font-mono {
+  font-family: 'Noto Sans JP', sans-serif !important;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--line);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ink-soft);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease both;
+}
+
+/* Focus visible */
+*:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
